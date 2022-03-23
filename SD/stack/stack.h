@@ -49,7 +49,6 @@ public:
 	Atom top() {
 		if (this->empty()) {
 			throw std::out_of_range("The stack is empty.");
-			exit(EXIT_FAILURE);
 		}
 
 		return this->_top->data;
@@ -58,7 +57,6 @@ public:
 	Atom pop() {
 		if (this->empty()) {
 			throw std::out_of_range("The stack is empty.");
-			exit(EXIT_FAILURE);
 		}
 		
 		Atom ret_value = this->top();

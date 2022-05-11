@@ -26,7 +26,7 @@ public:
         this->array[++this->_size] = key;
 
         int iter = this->_size;
-        while(iter >> 1 > 0 && this->array[iter] > this->array[iter >> 1]) {
+        while((iter >> 1) > 0 && (this->array[iter] > this->array[iter >> 1])) {
             std::swap(this->array[iter], this->array[iter >> 1]);
 
             iter = iter >> 1;

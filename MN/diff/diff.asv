@@ -1,0 +1,27 @@
+% y' = (sin(25y) + cos(0.1x) - 3y) / 2
+
+x0 = 1;
+y0 = 0;
+
+start = x0;
+stop = 100;
+
+func = @(x, y) (sin(25 * y) + cos(.1 * x) - 3 * y) / 2;
+
+dx = .01;
+n = (stop - start) / dx + 1;
+
+x_plot = x0:dx:stop;
+y_plot = zeros(1, n);
+
+x = x0;
+y = y0;
+iter = 2;
+while iter <= n
+    y_plot(iter) = dx * func(x, y) + y_plot(iter - 1);
+
+    iter = iter + 1;
+    x = x + dx;
+end
+
+plot(x_plot, y_plot)
